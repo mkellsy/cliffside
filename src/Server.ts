@@ -1,5 +1,3 @@
-import Net from "net";
-
 import * as Baf from "@mkellsy/baf-client";
 import * as Leap from "@mkellsy/leap-client";
 import * as Interfaces from "@mkellsy/hap-device";
@@ -18,8 +16,6 @@ export class Server {
 
     private leap?: Leap.Client;
     private baf?: Baf.Client;
-
-    private listener?: Net.Server;
 
     /**
      * Creates an instance to this plugin.
@@ -46,8 +42,6 @@ export class Server {
 
         this.leap = Leap.connect().on("Available", this.onAvailable).on("Update", this.onUpdate);
         this.baf = Baf.connect().on("Available", this.onAvailable).on("Update", this.onUpdate);
-
-        this.listener = Net.createServer().listen();
     }
 
     /**
@@ -64,10 +58,6 @@ export class Server {
             log.info("closing BAF client.");
 
             this.baf.off("Available", this.onAvailable).off("Update", this.onUpdate).close();
-        }
-
-        if (this.listener != null) {
-            this.listener.close();
         }
     }
 
