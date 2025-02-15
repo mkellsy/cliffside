@@ -1,0 +1,55 @@
+{
+    "version": "1.0.0",
+    "name": "@mkellsy/cliffside",
+    "displayName": "Cliffside Control",
+    "description": "Home control for the Cliffside house.",
+    "author": "Michael Kellsy",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mkellsy/cliffside"
+    },
+    "homepage": "https://github.com/mkellsy/cliffside",
+    "main": "dist/cli.js",
+    "files": [
+        "/dist",
+        "/bin",
+        "authority"
+    ],
+    "bin": {
+        "cliffside": "bin/cliffside"
+    },
+    "scripts": {
+        "build": "npm run format && npm run lint && node ./build",
+        "lint": "eslint ./src/*.ts",
+        "format": "prettier --write .",
+        "start": "npm run build && node ./bin/cliffside -d start",
+        "buttons": "npm run build && node ./bin/cliffside -d buttons",
+        "devices": "npm run build && node ./bin/cliffside -d devices",
+        "keypads": "npm run build && node ./bin/cliffside -d keypads",
+        "read": "npm run build && node ./bin/cliffside -d read",
+        "pair": "npm run build && node ./bin/cliffside -d pair",
+        "prepublishOnly": "npm run build"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.2.0",
+        "@mkellsy/baf-client": "^1.7.3",
+        "@mkellsy/hap-device": "^1.7.7",
+        "@mkellsy/leap-client": "^1.7.2",
+        "@types/debug": "^4.1.12",
+        "@types/eslint__js": "^8.42.3",
+        "@types/node": "^20.11.0",
+        "@typescript-eslint/eslint-plugin": "^7.11.0",
+        "bson": "^6.9.0",
+        "colors": "^1.4.0",
+        "commander": "^10.0.1",
+        "esbuild": "^0.20.2",
+        "eslint": "^8.57.0",
+        "eslint-plugin-jsdoc": "^48.2.3",
+        "js-logger": "^1.6.1",
+        "prettier": "^3.2.5",
+        "source-map-support": "^0.5.21",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.3.3"
+    }
+}
