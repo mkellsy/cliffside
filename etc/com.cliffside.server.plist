@@ -21,10 +21,10 @@
     <string>/Users/mkellsy/.leap</string>
 
     <key>StandardOutPath</key>
-    <string>/Users/mkellsy/.leap/run.log</string>
+    <string>/usr/local/var/cliffside/run.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/mkellsy/.leap/run.log</string>
+    <string>/usr/local/var/cliffside/run.log</string>
 
     <key>UserName</key>
     <string>mkellsy</string>
