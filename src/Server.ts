@@ -59,6 +59,9 @@ export class Server {
 
             this.baf.off("Available", this.onAvailable).off("Update", this.onUpdate).close();
         }
+
+        this.leap = undefined;
+        this.baf = undefined;
     }
 
     /*
